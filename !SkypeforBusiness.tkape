@@ -1,0 +1,28 @@
+Description: Collect Skype for Business related log files
+Author: esecrpm
+Version: 1.0
+Id: 8d058b74-5290-48a0-b358-f039c724e5b3
+RecreateDirectories: true
+Targets:
+    -
+        Name: Skype for Business UccApilog files
+        Category: Logs
+        Path: C:\Users\%user%\AppData\Local\Microsoft\Office\*\Lync\Tracing
+        Recursive: false
+        FileMask: "Lync-UccApi-*.UccApilog"
+
+    -
+        Name: Skype for Business Event Tracing Log files
+        Category: Logs
+        Path: C:\Users\%user%\AppData\Local\Microsoft\Office\*\Lync\Tracing
+        Recursive: false
+        FileMask: "*.etl"
+    -
+        Name: Skype for Business backup log files
+        Category: Logs
+        Path: C:\Users\%user%\AppData\Local\Microsoft\Office\*\Lync\Tracing
+        Recursive: false
+        FileMask: "*.bak"
+
+# Documentation
+# https://docs.microsoft.com/en-us/skypeforbusiness/troubleshoot/server-configuration/collect-log-files
